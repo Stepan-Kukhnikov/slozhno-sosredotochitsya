@@ -1,0 +1,11 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.reg {
+  display: flex;
+  justify-content: space-between;
+  gap: 128px;
+}/*# sourceMappingURL=_registration.css.map */

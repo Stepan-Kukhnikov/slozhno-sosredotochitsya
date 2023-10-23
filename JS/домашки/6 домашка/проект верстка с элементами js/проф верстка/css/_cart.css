@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.cart {
+  display: flex;
+  gap: 128px;
+  margin-top: 96px;
+}
+.cart__products {
+  display: flex;
+  flex-direction: column;
+  width: 652px;
+}/*# sourceMappingURL=_cart.css.map */

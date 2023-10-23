@@ -1,0 +1,18 @@
+[
+    {
+        "name": "MANGO PEOPLE T-SHIRT",
+        "image": "img/Rectangle 15 copy.jpg",
+        "price": "300",
+        "color": "Red",
+        "size": "XL",
+        "quantity": "2"
+    },
+    {
+        "name": "ELLERY X M'O CAPSULE",
+        "image": "img/man2.jpg",
+        "price": "52",
+        "color": "Black",
+        "size": "XL",
+        "quantity": "1"
+    }
+]
