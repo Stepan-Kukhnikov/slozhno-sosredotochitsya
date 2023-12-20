@@ -1,0 +1,401 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  block-size: 100%;
+}
+
+.page {
+  inline-size: 1200px;
+  block-size: 100%;
+  margin: auto;
+  color: #fff;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  background-color: #1b1919;
+  display: flex;
+  align-items: flex-end;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-self: center;
+  gap: 30px;
+  width: 1140px;
+}
+
+.search-form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 16px;
+}
+
+.search-form__fieldset-title {
+  color: #fff;
+  font-family: Fira Sans Condensed, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.content__list {
+  position: relative;
+  height: 298px;
+  width: 398px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.content__list::-webkit-scrollbar {
+  width: 0;
+}
+
+.content__details {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.result__video-container {
+  min-height: 386px;
+}
+
+.result__video {
+  min-height: 386px;
+}
+
+.content__list-item {
+  margin-bottom: 34px;
+}
+
+.content__list:last-child {
+  margin-bottom: 0px;
+}
+
+.content__video-card {
+  display: flex;
+  justify-content: start;
+}
+
+.content__card-link:focus {
+  background-color: #545050;
+  width: 394px;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+}
+
+.content__video-card-description-container {
+  width: 100%;
+  height: 100%;
+}
+
+.result__video-container {
+  position: relative;
+}
+
+.title {
+  color: #fff;
+  font-family: Oswald, sans-serif;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 94%;
+  text-transform: uppercase;
+  margin-bottom: 26px;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+
+.content__list-item:focus-visible {
+  outline: solid #fff;
+}
+
+.content__video-card-title {
+  color: #fff;
+  font-family: Oswald, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 30px */
+  text-transform: uppercase;
+  padding-bottom: 6px;
+}
+
+.content__video-card-description {
+  line-height: 16.2px; /* 90% */
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.search-form__fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.search-form__label {
+  display: flex;
+  cursor: pointer;
+  gap: 5px;
+}
+
+input {
+  cursor: pointer;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.search-form__textfield {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Fira Sans Condensed, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: transparent;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-left: none;
+  border-right: none;
+  appearance: none;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  width: 225px;
+  outline: none;
+}
+
+.search-form__label:hover {
+  text-decoration-line: underline;
+  color: #fff;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+input[type="checkbox"] + span {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+  margin-left: 1px;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+}
+
+/* Для секции search-form__label я добавил дополнительный класс another-label для
+ упрощения работы с секцией input, так как элементы в секции с чекбоксами имеют такой же класс.
+ Я понимаю, что работу с input элементом формы можно выполнить по-другому, но я не смог придумать, как это сделать.
+ В рекомендациях к выполнению данной проектной работы есть следующая формулировка: "пишите в основном CSS, 
+ не меняйте уже написанные имена классов, старайтесь минимизировать свои действия с HTML-кодом."
+ На сколько я понял, запрета на то, чтобы дописать в одном элементе дополнительный класс в рекомендациях нет, поэтому 
+ я оставлю свой вариант исполнения данной задачи. */
+
+.search-form__label.another-label:hover {
+  text-decoration: none;
+  cursor: default;
+  outline: none;
+}
+
+.search-form__textfield:hover {
+  text-decoration: none;
+  cursor: text;
+  outline: none;
+}
+
+input[type="checkbox"]:checked + span {
+  background-color: #fff;
+  width: 17px;
+  height: 17px;
+}
+
+
+/* Так же я отклонился от рекомендаций по реализации active состояния чекбоксов. Я так же понимаю, что 
+данную задачу можно реализовать по-другому, но я не смог придумать как, поэтому использовал свою интерпретацию.
+На мой взгляд такое решение полностью выолняет весь необходимый функционал. */
+
+.result {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  color: #fff;
+  text-align: center;
+  font-family: Fira Sans Condensed, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background-color: transparent;
+  border: 1px solid #fff;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  align-self: flex-end;
+}
+
+.more-button {
+  min-width: 100%;
+}
+
+.search-form__submit-button:hover {
+  text-decoration-line: underline;
+  color: #fff;
+}
+
+.search-form__submit-button:active {
+  border: 1px solid #fff;
+  background: #545050;
+  text-decoration: none;
+}
+
+.search-form__submit-button:focus {
+  outline: none;
+}
+
+.search-form__submit-button:focus-visible {
+  display: flex;
+  width: 198px;
+  height: 38px;
+  justify-content: center;
+  align-items: center;
+  border: 3px double #fff;
+}
+
+.content__list-item:hover {
+  text-decoration-line: underline;
+  color: #fff;
+}
+
+.content__list-item:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
+.search-form__textfield:focus {
+  border: none;
+  outline: none;
+  text-decoration-line: none;
+}
+
+.search-form__textfield:focus-visible {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  margin: 2px 2px;
+  min-height: 25px;
+  min-width: 225px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-form__textfield:active {
+  border: none;
+  width: 225px;
+  height: 26px;
+}
+
+.more-button:hover {
+  text-decoration-line: underline;
+  color: #fff;
+}
+
+.more-button:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
+.more-button:focus {
+  outline: none;
+}
+
+.more-button:focus-visible {
+  border: 3px double #fff;
+}
+
+.search-form__label:has(:focus-visible) {
+  border: 1px solid #fff;
+}
+
+.search-form__pseudo-checkbox:active {
+  width: 17px;
+  height: 17px;
+  background: #fff;
+  border: 1px solid #1b1919;
+  outline: 1px solid #fff;
+}
+
+.content__video-card:focus {
+  outline: none;
+}
+
+.content__card-link {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  min-height: 104px;
+  min-width: 398px;
+  border: 1px solid #fff;
+}
