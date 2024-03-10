@@ -1,12 +1,38 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 .page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --accent-color: #ff8dcb;
+  --text-main-color: #353430;
+  --button-list-color: #353430;
+  --button-list-hover-color: rgba(50, 49, 45, 0.40);
+  --font-family: IBM Plex Mono, sans-serif;
+  --text-line-height: line-height: 23.4px;
+  --subtitle-color: #353430;
+  --corner-color: #353430;
+  --rec-element-color: transparent;
+  --text-font-size: 18px;
+  --title-decor: #ff8dcb;
+  --background-color: #fff1f7;
+  --header-color: #ffc2e6;
+  --footer-color: #ffc2e6;
+  --unique-decoration-color: #353430;
+  background-image: url(../images/cover-image-light.png);
+}
+
+@media (prefers-color-scheme: light) {
+:root {
+  --accent-color: #ff8dcb;
+  --text-main-color: #353430;
+  --button-list-color: #353430;
+  --button-list-hover-color: rgba(50, 49, 45, 0.40);
+  --font-family: IBM Plex Mono, sans-serif;
+  --text-line-height: line-height: 23.4px;
+  --subtitle-color: #353430;
+  --corner-color: #353430;
+  --rec-element-color: transparent;
+  --text-font-size: 18px;
+  --title-decor: #ff8dcb;
+  --background-color: #fff1f7;
+  --header-color: #ffc2e6;
+  --footer-color: #ffc2e6;
+  --unique-decoration-color: #353430;
+}
 }
