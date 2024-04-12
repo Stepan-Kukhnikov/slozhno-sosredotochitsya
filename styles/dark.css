@@ -15,6 +15,7 @@
   --header-color: #db00ff;
   --footer-color: #db00ff;
   --unique-decoration-color: #F1B2CE;
+  --shadow-color: #ff0070;
   background-image: url(../images/cover-image-dark.png);
 }
 
@@ -36,5 +37,6 @@
   --header-color: #db00ff;
   --footer-color: #db00ff;
   --unique-decoration-color: #F1B2CE;
+  --shadow-color: #ff0070;
 }
 }
