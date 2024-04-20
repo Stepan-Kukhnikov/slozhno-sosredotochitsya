@@ -1,9 +1,3 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-* {
-  padding: 0;
-  margin: 0;
-}
-
 body {
   background-color: var(--background-color);
 }
@@ -28,7 +22,7 @@ button {
 
 .rec-element::after {
   fill: var(--rec-element-color);
-  filter: drop-shadow(0px 0px 4px var(--rec-element-color));
+  box-shadow: 0 0 4px 2px var(--rec-element-color);
   margin-left: 10px;
   content: "";
   display: inline-block;
@@ -36,33 +30,39 @@ button {
   height: 9px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  border-radius: 4.5px;
+  border-radius: 50%;
   background-color: var(--rec-element-color);
   margin-bottom: 1px;
 }
 
 .header {
   padding: 10px;
+  height: 100vh;
+  min-height: 668px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  justify-items: end;
 }
 
-.header::before {
+.decorated-element::before,
+.decorated-element::after {
   content: "";
-  display: inline-block;
   position: absolute;
-  top: 10px;
-  right: 10px;
   width: 25px;
   height: 25px;
+}
+
+.decorated-element::before {
+  top: 10px;
+  right: 10px;
   border-top: 1px solid var(--corner-color);
   border-right: 1px solid var(--corner-color);
 }
 
-.header::after {
-  content: "";
-  display: flex;
-  flex-direction: row-reverse;
-  width: 25px;
-  height: 25px;
+.decorated-element::after {
+  left: 10px;
+  bottom: 10px;
   border-left: 1px solid var(--corner-color);
   border-bottom: 1px solid var(--corner-color);
 }
@@ -72,7 +72,6 @@ button {
   flex-direction: column;
   align-items: flex-end;
   list-style-type: none;
-  padding-top: 66px;
   gap: 12px;
 }
 
@@ -95,6 +94,7 @@ button {
 
 .header__theme-menu-button_active {
   outline: 1px solid var(--button-list-color);
+  pointer-events: none; 
 }
 
 .header__theme-menu-button:focus {
@@ -106,8 +106,6 @@ button {
 }
 
 .header__topic-name {
-  margin-top: 68px;
-  margin-bottom: 55px;
   color: var(--header-color);
   text-shadow: 4px 4px 0px var(--shadow-color);
   font-family: var(--font-family);
@@ -125,7 +123,6 @@ button {
   font-weight: 700;
   line-height: var(--text-line-height);
   background-color: var(--title-decor);
-  margin-bottom: 31px;
 }
 
 main {
@@ -136,17 +133,30 @@ main {
   display: grid;
 }
 
-.why__header {
+.section__header {
   color: var(--subtitle-color);
   font-family: var(--font-family);
   font-size: var(--text-font-size);
   font-style: normal;
   font-weight: 700;
   line-height: var(--text-line-height);
-  margin: 41px 0px 20px 0px;
+  margin-top: 41px;
+  margin-bottom: 20px;
 }
 
-.why__sub-header {
+article {
+  margin-bottom: 21px;
+}
+
+article:last-of-type {
+  margin-bottom: 0px;
+}
+
+.what__template {
+  padding-top: var(--small-gap);
+}
+
+.section__sub-header {
   color: var(--heading-text-color);
   font-family: var(--font-family);
   font-size: var(--text-font-size);
@@ -157,128 +167,7 @@ main {
   margin: 0px 0px 10px 0px;
 }
 
-.why__text {
-  color: var(--text-main-color);
-  font-family: var(--font-family);
-  font-size: var(--text-font-size);
-  font-style: normal;
-  font-weight: 400;
-  line-height: var(--text-line-height);
-  padding-bottom: 23px;
-}
-
-.why__text:last-of-type {
-  padding: 0;
-  margin: 0;
-  gap: 0;
-}
-
-.why__text-unique {
-  text-shadow: 1px 2px 0px var(--accent-color);
-  cursor: pointer;
-}
-
-.why__text-unique:hover {
-  border-bottom: 1px solid var(--unique-decoration-color);
-}
-
-.why__text-unique:focus {
-  outline: none;
-}
-
-.why__text-unique:focus-visible {
-  box-shadow: 0 1px 0 var(--button-list-color);
-}
-
-.what {
-  display: grid;
-}
-
-.what__section-column {
-  padding-bottom: 23px;
-}
-
-.what__section-column:last-of-type {
-  padding: 0;
-  margin: 0;
-  gap: 0;
-}
-
-.what__header {
-  color: var(--subtitle-color);
-  font-family: var(--font-family);
-  font-size: var(--text-font-size);
-  font-style: normal;
-  font-weight: 700;
-  line-height: var(--text-line-height);
-  margin-top: 54px;
-  margin-bottom: 20px;
-}
-
-.what__sub-header {
-  color: var(--heading-text-color);
-  font-family: var(--font-family);
-  font-size: var(--text-font-size);
-  font-style: normal;
-  font-weight: 700;
-  line-height: var(--text-line-height);
-  background-color: var(--title-decor);
-  margin: 0px 0px 10px 0px;
-}
-
-.what__text {
-  color: var(--text-main-color);
-  font-family: var(--font-family);
-  font-size: var(--text-font-size);
-  font-style: normal;
-  font-weight: 400;
-  line-height: var(--text-line-height);
-}
-
-.what__text:last-of-type {
-  padding: 0;
-  margin: 0;
-  gap: 0;
-}
-
-.how {
-  display: grid;
-}
-
-.how__header {
-  color: var(--subtitle-color);
-  font-family: var(--font-family);
-  font-size: var(--text-font-size);
-  font-style: normal;
-  font-weight: 700;
-  line-height: var(--text-line-height);
-  margin-top: 52px;
-  margin-bottom: 20px;
-}
-
-.how__advice {
-  color: var(--heading-text-color);
-  background-color: var(--title-decor);
-  font-family: var(--font-family);
-  font-size: var(--text-font-size);
-  font-style: normal;
-  font-weight: 700;
-  line-height: var(--text-line-height);
-  margin-bottom: 20px;
-}
-
-.how__sub-header {
-  color: var(--heading-text-color);
-  background-color: var(--title-decor);
-  font-family: var(--font-family);
-  font-size: var(--text-font-size);
-  font-style: normal;
-  font-weight: 400;
-  line-height: var(--text-line-height);
-  margin-bottom: 13px;
-}
-
-.how__text {
+.section__text {
   color: var(--text-main-color);
   font-family: var(--font-family);
   font-size: var(--text-font-size);
@@ -288,29 +177,72 @@ main {
   padding-bottom: 20px;
 }
 
-.how__text:last-of-type {
-  gap: 0;
-  padding: 0;
-  margin: 0;
+.section__text:last-of-type {
+  padding-bottom: 0px;
 }
 
-.how__text-unique {
-  text-shadow: 1px 2px 0px var(--accent-color);
+.link-unique {
+  text-decoration: none;
+  text-shadow: 2px 2px 0px var(--accent-color);
   cursor: pointer;
-  background-color: transparent;
-  border: none;
 }
 
-.how__text-unique:hover {
+.link-unique:hover {
   border-bottom: 1px solid var(--unique-decoration-color);
 }
 
-.how__text-unique:focus {
+.link-unique:focus {
   outline: none;
 }
 
-.how__text-unique:focus-visible {
+.link-unique:focus-visible {
+  box-shadow: 0 1px 0 var(--button-list-color);
+}
+
+.what {
+  display: grid;
+}
+
+.how {
+  display: grid;
+}
+
+.how-template {
+  padding-top: var(--small-gap);
+}
+
+.section__how-advice {
+  color: var(--heading-text-color);
+  background-color: var(--title-decor);
+  font-family: var(--font-family);
+  font-size: var(--text-font-size);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--text-line-height);
+  margin-bottom: 20px;
+}
+
+.how-differences {
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.link-unique {
+  text-decoration: none;
+  text-shadow: 2px 2px 0px var(--accent-color);
+  cursor: pointer;
+}
+
+.link-unique:hover {
   border-bottom: 1px solid var(--unique-decoration-color);
+}
+
+.link-unique:focus {
+  outline: none;
+}
+
+.link-unique:focus-visible {
+  box-shadow: 0 1px 0 var(--button-list-color);
 }
 
 .image-section {
@@ -327,7 +259,7 @@ main {
   font-style: normal;
   font-weight: 700;
   line-height: var(--text-line-height);
-  margin-top: 47px;
+  margin-top: 50px;
 }
 
 .image-section__body {
@@ -340,12 +272,17 @@ main {
 }
 
 .footer {
-  margin: 48px 10px 10px;
+  margin-top: 40px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  min-height: 668px;
 }
 
 .footer__title {
-  padding-top: 277px;
-  padding-bottom: 280px;
+  justify-self: center;
+  align-self: center;
   position: relative;
   display: flex;
   justify-content: center;
@@ -358,32 +295,6 @@ main {
   line-height: 82.5%;
 }
 
-.footer__title::before {
-  content: "";
-  display: flex;
-  flex-direction: row-reverse;
-  position: absolute;
-  right: 0px;
-  top: 3px;
-  width: 25px;
-  height: 25px;
-  border-top: 1px solid var(--corner-color);
-  border-right: 1px solid var(--corner-color);
-}
-
-.footer__title::after {
-  content: "";
-  display: flex;
-  flex-direction: row-reverse;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 25px;
-  height: 25px;
-  border-left: 1px solid var(--corner-color);
-  border-bottom: 1px solid var(--corner-color);
-}
-
 @media ( width >= 768px ) {
 
   .rec-element {
@@ -393,29 +304,33 @@ main {
 
   .header {
     padding: 20px 20px 20px 0;
-    position: relative;
   }
 
-  .header::before {
+  .decorated-element::before,
+  .decorated-element::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  }
+
+  .decorated-element::before {
     top: 20px;
     right: 20px;
+    border-top: 1px solid var(--corner-color);
+    border-right: 1px solid var(--corner-color);
   }
-
-  .header::after {
-    display: inline-block;
-    position: absolute;
+  
+  .decorated-element::after {
     left: 20px;
     bottom: 20px;
-  }
-
-  .header__theme-menu-list {
-    padding-top: 173px;
+    border-left: 1px solid var(--corner-color);
+    border-bottom: 1px solid var(--corner-color);
   }
 
   .header__topic-name {
-    margin-top: 173px;
-    margin-bottom: 162px;
     margin-left: 0;
+    justify-self: start;
   }
 
   .header__grid-template {
@@ -424,41 +339,36 @@ main {
     justify-content: end;
   }
 
-  .header__topic-description {
-    margin-bottom: 165px;
-  }
-
   main {
     padding: 0px 20px 0px 20px;
   }
 
   .why {
-    display: grid;
     grid-template-columns: 1fr 2fr;
     column-gap: 20px;
     margin: 60px 0px 20px 0px;
   }
 
-  .why__header {
-    margin: 0;
+  .section__header {
+    margin-top: 0;
   }
 
-  .what__header {
+  .what__template {
     display: grid;
     grid-template-columns: 1fr 2fr;
     column-gap: 20px;
-    margin-top: 62px;
+    margin-top: 63px;
+    padding-top: 0;
   }
 
   .how {
-    margin-top: 79px;
-    display: grid;
+    margin-top: 84px;
     grid-template-columns: 1fr 2fr;
     column-gap: 20px;
   }
 
-  .how__header {
-    margin: 0;
+  .how-template {
+    padding: 0;
   }
   
   .image-section {
@@ -466,7 +376,7 @@ main {
     gap: 20px;
     max-width: 100%;
     display: grid;
-    margin-top: 75px;
+    margin-top: 77px;
   }
 
   .image-section__header {
@@ -500,12 +410,7 @@ main {
   }
 
   .footer {
-    margin: 80px 20px 20px 20px;
-  }
-
-  .footer__title {
-    padding-top: 442px;
-    padding-bottom: 444px;
+    margin-top: 60px;
   }
 }
 
@@ -522,52 +427,42 @@ main {
     bottom: 20px;
   }
 
-  .header__theme-menu-list {
+  .header__theme-menu {
+    width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+  }
+
+  .header__theme-menu-list {
     padding: 0;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-end;
-    list-style-type: none;
     padding-left: 20px;
     gap: 10px;
   }
 
   .header__topic-name {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin-top: 273px;
-    margin-bottom: 116px;
     margin-left: 0;
   }
 
   .header__grid-template {
-    grid-template-columns: 49%;
+    grid-template-columns: 64%;
+    height: 23%;
   }
 
   .header__topic-description {
     margin-bottom: 116px;
   }
 
-  main {
-    padding: 0px 20px 0px 20px;
-  }
-
   .why {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
     column-gap: 10px;
-    margin: 60px 0px 20px 0px;
+    margin: 60px 0px 18px 0px;
   }
 
-  .why__header {
-    margin: 0;
-  }
-
-  .what__header {
-    margin-top: 62px;
-  }
-
-  .what__section {
+  .section__topic {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 20px;
@@ -575,32 +470,19 @@ main {
 
   .how {
     margin-top: 83px;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
     column-gap: 10px;
   }
 
-  .how__header {
-    margin: 0;
-  }
-
-  .how__sub-header {
-    margin-bottom: 11px;
-  }
-
   .image-section {
-    margin-top: 82px;
+    margin-top: 76px;
   }
 
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    padding-top: 302px;
-    padding-bottom: 300px;
   }
 }
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-attachment: fixed;
   background-image: url(../images/cover-image-dark.png);
   background-size: cover;

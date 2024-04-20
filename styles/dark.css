@@ -3,7 +3,9 @@
   --text-main-color: #F1B2CE;
   --button-list-color: #FF0070;
   --button-list-hover-color: rgba(255, 0, 112, 0.40);
-  --font-family: IBM Plex Mono, sans-serif;
+  --font-family: 'IBM Plex Mono', monospace;
+  --small-gap: 12px;
+  --mid-gap: 23px;
   --text-line-height: line-height: 23.4px;
   --subtitle-color: #FF0070;
   --corner-color: #FF0070;
@@ -25,7 +27,9 @@
   --text-main-color: #F1B2CE;
   --button-list-color: #FF0070;
   --button-list-hover-color: rgba(255, 0, 112, 0.40);
-  --font-family: IBM Plex Mono, sans-serif;
+  --font-family: 'IBM Plex Mono', monospace;
+  --small-gap: 12px;
+  --mid-gap: 23px;
   --text-line-height: line-height: 23.4px;
   --subtitle-color: #FF0070;
   --corner-color: #FF0070;
