@@ -196,7 +196,7 @@ article:last-of-type {
 }
 
 .link-unique:focus-visible {
-  box-shadow: 0 1px 0 var(--button-list-color);
+  outline: 1px solid var(--unique-decoration-color);
 }
 
 .what {
@@ -225,24 +225,6 @@ article:last-of-type {
 .how-differences {
   font-weight: 400;
   margin-bottom: 12px;
-}
-
-.link-unique {
-  text-decoration: none;
-  text-shadow: 2px 2px 0px var(--accent-color);
-  cursor: pointer;
-}
-
-.link-unique:hover {
-  border-bottom: 1px solid var(--unique-decoration-color);
-}
-
-.link-unique:focus {
-  outline: none;
-}
-
-.link-unique:focus-visible {
-  box-shadow: 0 1px 0 var(--button-list-color);
 }
 
 .image-section {
@@ -306,30 +288,17 @@ article:last-of-type {
     padding: 20px 20px 20px 0;
   }
 
-  .decorated-element::before,
-  .decorated-element::after {
-  content: "";
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  }
-
   .decorated-element::before {
     top: 20px;
     right: 20px;
-    border-top: 1px solid var(--corner-color);
-    border-right: 1px solid var(--corner-color);
   }
   
   .decorated-element::after {
     left: 20px;
     bottom: 20px;
-    border-left: 1px solid var(--corner-color);
-    border-bottom: 1px solid var(--corner-color);
   }
 
   .header__topic-name {
-    margin-left: 0;
     justify-self: start;
   }
 
@@ -416,17 +385,6 @@ article:last-of-type {
 
 @media (width >= 1024px) {
 
-  .header {
-    padding: 20px 20px 20px 0;
-    position: relative;
-  }
-
-  .header::after {
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
-  }
-
   .header__theme-menu {
     width: 100%;
     display: flex;
@@ -445,16 +403,10 @@ article:last-of-type {
 
   .header__topic-name {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin-left: 0;
   }
 
   .header__grid-template {
     grid-template-columns: 64%;
-    height: 23%;
-  }
-
-  .header__topic-description {
-    margin-bottom: 116px;
   }
 
   .why {
@@ -485,6 +437,7 @@ article:last-of-type {
 .page {
   background-attachment: fixed;
   background-image: url(../images/cover-image-dark.png);
+  background-color: var(--background-color);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
